@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Програма для очищеня телефону</title>
+    <title>Завантаження FixProP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,53 +14,24 @@
             max-width: 600px;
             margin: auto;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #28a745;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1></h1>
-        <p>Натисніть кнопку, щоб Скачати</p>
-        <button onclick="https://workupload.com/file/xvVdEtKfV55">скачати</button>
-        <p id="location">Ваші дані очищено</p>
+        <h1>Завантажте FixPro</h1>
+        <p>Натисніть кнопку нижче, щоб завантажити додаток для очищеня.</p>
+        <p>Ми даємо гарантію на очищеня телефону та для збільшеня робото здатності.</p>
+        <a href="https://workupload.com/file/xvVdEtKfV55" class="download-btn" download>Завантажити APK</a>
     </div>
-    
-    <script>
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                document.getElementById("location").innerText = "Ваш браузер не підтримує геолокацію.";
-            }
-        }
-        
-        function showPosition(position) {
-            let lat = position.coords.latitude;
-            let lon = position.coords.longitude;
-            document.getElementById("location").innerHTML = `Координати: ${lat}, ${lon} <br>
-            <a href="https://www.google.com/maps?q=${lat},${lon}" target="_blank">Відкрити в Google Maps</a>`;
-        }
-        
-        function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    document.getElementById("location").innerText = "Доступ до геолокації заборонено користувачем.";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    document.getElementById("location").innerText = "Інформація про місцезнаходження недоступна.";
-                    break;
-                case error.TIMEOUT:
-                    document.getElementById("location").innerText = "Час очікування запиту геолокації вичерпано.";
-                    break;
-                case error.UNKNOWN_ERROR:
-                    document.getElementById("location").innerText = "Сталася невідома помилка.";
-                    break;
-            }
-        }
-    </script>
 </body>
 </html>
